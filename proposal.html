@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forever 💍</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* ===== BACKGROUND ===== */
+body{
+  margin:0;
+  font-family:'Segoe UI', cursive;
+  background: radial-gradient(circle at center,#3b0018,#000);
+  color:white;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  text-align:center;
+}
+
+/* ===== HEARTBEAT NAME ===== */
+.glow{
+  font-size:56px;
+  color:#ff7aa5;
+  text-shadow:0 0 25px #ff3c7d,0 0 60px #ff2f6e;
+  animation:heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+}
+
+/* ===== TEXT ===== */
+.question{
+  font-size:22px;
+  margin-top:15px;
+  color:#ffd6e5;
+  opacity:0;
+  animation:fadeIn 3s forwards 1.5s;
+}
+
+.memory{
+  font-size:16px;
+  margin-top:10px;
+  color:#ffc4d6;
+  opacity:0;
+  animation:fadeIn 3s forwards 3s;
+}
+
+@keyframes fadeIn{ to{opacity:1} }
+
+/* ===== BUTTON ===== */
+.btn{
+  margin-top:35px;
+  padding:18px 55px;
+  border-radius:60px;
+  font-size:20px;
+  border:none;
+  cursor:pointer;
+  background:linear-gradient(45deg,#ff3c7d,#ff7aa5);
+  color:white;
+  box-shadow:0 0 35px rgba(255,70,120,0.9);
+  transition:0.3s;
+  opacity:0;
+  animation:fadeIn 3s forwards 4.5s;
+}
+
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 65px rgba(255,70,120,1);
+}
+
+/* ===== PHOTO SCENE ===== */
+.photo-scene{
+  position:fixed;
+  inset:0;
+  background:black;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+
+  gap:14px;              /* 🔥 controls spacing between photo & text */
+
+  padding:20px;          /* small safe margin */
+
+  opacity:0;
+  pointer-events:none;
+  transition:2s;
+}
+
+.photo-scene.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+
+
+
+.photo-scene.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.photo-scene img{
+  height:min(66vh, 560px);   /* 🔥 balanced — keeps text visible */
+  width:auto;
+  max-width:90vw;
+
+  border-radius:24px;
+  object-fit:cover;
+
+  box-shadow:
+    0 0 25px rgba(255,120,150,0.6),
+    0 0 60px rgba(255,70,120,0.35),
+    0 0 120px rgba(255,70,120,0.2);
+
+  margin:0;                  /* remove extra space */
+
+  animation:photoZoom 8s ease-in-out forwards;
+  transform: rotate(90deg);   /* keep straight */
+}
+
+@keyframes zoomPhoto{
+  0%{ transform: rotate(-90deg) scale(0.94); opacity:0; }
+  20%{ opacity:1; }
+  100%{ transform: rotate(-90deg) scale(1.06); }
+}
+
+
+
+@keyframes photoZoom{
+  0%{ transform:scale(0.92); opacity:0; }
+  20%{ opacity:1; }
+  100%{ transform:scale(1.05); }
+}
+
+
+.emotional{
+  font-size:18px;
+  line-height:1.38;      /* tighter lines */
+  letter-spacing:0.2px;
+
+  max-width:520px;
+  text-align:center;
+  color:#ffd6e5;
+
+  margin:0;              /* remove spacing */
+}
+
+
+
+
+
+/* ===== FINAL FOREVER SCREEN ===== */
+.final-scene{
+  position:fixed;
+  inset:0;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  opacity:0;
+  pointer-events:none;
+  transition:2s;
+}
+
+.final-scene.show{
+  opacity:1;
+}
+
+.final-text{
+  font-size:44px;
+  color:#ff7aa5;
+  text-shadow:0 0 30px #ff2f6e;
+}
+
+.sub-text{
+  margin-top:12px;
+  font-size:18px;
+  color:#ffd6e5;
+}
+
+/* ===== FLOAT HEARTS ===== */
+.heart{
+  position:fixed;
+  font-size:18px;
+  animation:floatUp 6s linear forwards;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:1;}
+  to{transform:translateY(-110vh);opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="main">
+  <h1 class="glow">Manoj 💞</h1>
+
+  <div class="question">
+    Will you walk with me…<br>
+    through every sunrise, every storm,<br>
+    and every dream… for the rest of our lives?
+  </div>
+
+  <div class="memory">
+    From Cousins… to my forever home 🤍
+  </div>
+
+  <button class="btn" onclick="showPhoto()">Hold My Hand 💍</button>
+</div>
+
+<!-- 💖 PHOTO + EMOTIONAL MESSAGE -->
+<div id="photoScene" class="photo-scene">
+  <img src="photos/11.jpg"> <!-- CHANGE TO YOUR BEST PHOTO -->
+
+  <div class="emotional">
+    From the moment you came into my life…  
+    everything felt right 🤍  
+    <br><br>
+    You are not just my love…  
+    You are my peace, my home, my forever.  
+    <br><br>
+    No matter where life takes us…  
+    my heart will always choose you. 💞
+  </div>
+</div>
+
+<!-- 💍 FINAL FOREVER SCREEN -->
+<div id="finalScene" class="final-scene">
+  <div class="final-text">Together… Always 💖</div>
+  <div class="sub-text">Our Forever Begins Now</div>
+</div>
+
+<!-- 🎵 MUSIC -->
+<audio id="music" loop>
+  <source src="videos/music.mp3" type="audio/mp3">
+</audio>
+
+<script src="script.js"></script>
+
+<script>
+
+/* Floating hearts */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+  h.style.left=Math.random()*100+"vw";
+  h.style.bottom="0";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},900);
+
+/* Show photo then forever */
+function showPhoto(){
+  document.getElementById("main").style.opacity = 0;
+
+  /* Show photo scene */
+  setTimeout(()=>{
+    document.getElementById("photoScene").classList.add("show");
+  },1000);
+
+  /* After emotional scene → fade music + show final */
+  setTimeout(()=>{
+    fadeMusicOut(5000);   // 🎵 Smooth cinematic fade
+
+    document.getElementById("photoScene").classList.remove("show");
+    document.getElementById("finalScene").classList.add("show");
+  },7000);
+
+  /* OPTIONAL — Auto close ending after fade */
+  setTimeout(()=>{
+    const fs = document.getElementById("finalScene");
+    if(fs) fs.classList.remove("show");
+  },13000);
+}
+
+
+</script>
+
+</body>
+</html>

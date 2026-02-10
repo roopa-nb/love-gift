@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Gift ❤️</title>
+
+<style>
+
+/* ===== CINEMA BLACK SCREEN ===== */
+body{
+  margin:0;
+  font-family:'Segoe UI', cursive;
+  background:black;
+  overflow:hidden;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+/* ===== CINEMA FADE ===== */
+body.show{
+  animation:cinemaFade 3s ease forwards;
+}
+@keyframes cinemaFade{
+  from{background:black;}
+  to{background:radial-gradient(circle at center,#2b0d1f,#000);}
+}
+
+/* ===== STAR SKY ===== */
+.star{
+  position:fixed;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:0.8;
+  animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{
+  from{opacity:0.2;}
+  to{opacity:1;}
+}
+
+/* ===== CANDLE GLOW ===== */
+.candle{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 50% 85%, rgba(255,170,120,0.2), transparent 40%);
+}
+
+/* ===== FLOATING HEARTS ===== */
+.heart{
+  position:fixed;
+  font-size:18px;
+  animation:floatUp 6s linear forwards;
+}
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:1;}
+  to{transform:translateY(-110vh);opacity:0;}
+}
+
+/* ===== CINEMA TITLE ===== */
+.title{
+  font-size:48px;
+  text-align:center;
+  color:#ff9ab8;
+  text-shadow:0 0 25px #ff4b6e,0 0 60px #ff2f6e;
+  opacity:0;
+}
+
+/* ===== SUBTITLE ===== */
+.subtitle{
+  font-size:18px;
+  margin-top:12px;
+  opacity:0;
+  color:#ffd6e5;
+}
+
+/* ===== MEMORY FILM STRIP ===== */
+.memories{
+  display:flex;
+  gap:22px;
+  margin-top:40px;
+}
+
+.memories img{
+  width:160px;
+  height:210px;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.6);
+  transform:translateY(40px);
+  opacity:0;
+}
+
+/* ===== BIG CINEMA BUTTON ===== */
+.big-btn{
+  margin-top:40px;
+  padding:18px 50px;
+  border-radius:60px;
+  font-size:20px;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(45deg,#ff4b6e,#ff7a95);
+  box-shadow:0 0 35px rgba(255,70,120,0.9);
+  opacity:0;
+  transition:0.3s;
+}
+.big-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 60px rgba(255,70,120,1);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="candle"></div>
+
+<h1 class="title" id="title">This is my small gift for this Valentine’s Day ✨💖</h1>
+<p class="subtitle" id="sub">But the real surprise is waiting for you, Manoj…</p>
+
+<div class="memories">
+  <img src="photos/1.jpg" class="pic">
+  <img src="photos/10.jpg" class="pic">
+  <img src="photos/5.jpg" class="pic">
+  <img src="photos/11.jpg" class="pic">
+</div>
+
+<a href="warning.html" class="big-btn" id="btn">Enter Our Love Story 🎬</a>
+
+<!-- 🎵 MUSIC (CONTROLLED BY script.js ONLY) -->
+<audio id="music" loop>
+  <source src="videos/music.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+/* ===== CINEMA FADE IN ===== */
+setTimeout(()=>document.body.classList.add("show"),200);
+
+/* ===== STARS ===== */
+for(let i=0;i<80;i++){
+  const s=document.createElement("div");
+  s.className="star";
+  s.style.left=Math.random()*100+"vw";
+  s.style.top=Math.random()*100+"vh";
+  document.body.appendChild(s);
+}
+
+/* ===== FLOATING HEARTS ===== */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+  h.style.left=Math.random()*100+"vw";
+  h.style.bottom="0";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},900);
+
+/* ===== CINEMA TEXT REVEAL ===== */
+setTimeout(()=>title.style.opacity=1,1800);
+setTimeout(()=>sub.style.opacity=1,3000);
+
+/* ===== MEMORY REVEAL ===== */
+const pics=document.querySelectorAll(".pic");
+pics.forEach((p,i)=>{
+  setTimeout(()=>{
+    p.style.opacity=1;
+    p.style.transform="translateY(0)";
+  },3800+(i*700));
+});
+
+/* ===== BUTTON REVEAL ===== */
+setTimeout(()=>btn.style.opacity=1,6200);
+
+</script>
+
+<!-- GLOBAL MUSIC CONTROLLER -->
+<script src="script.js"></script>
+
+</body>
+</html>

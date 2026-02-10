@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Love Letter ❤️</title>
+
+<style>
+
+/* ===== BODY ===== */
+body{
+  margin:0;
+  font-family:'Segoe UI', cursive;
+  background:radial-gradient(circle at center,#2b0d1f,#000);
+  overflow:hidden;
+}
+
+/* ===== CANDLE GLOW ===== */
+.candle{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 50% 90%, rgba(255,170,120,0.2), transparent 40%);
+}
+
+/* ===== TITLE ===== */
+h1{
+  text-align:center;
+  color:#ff6a95;
+  margin-top:20px;
+}
+
+/* ===== BOOK ===== */
+.book{
+  width:92%;
+  max-width:650px;
+  height:500px;
+  position:relative;
+  perspective:1200px;
+  margin:40px auto 20px;
+}
+
+/* ===== PAGE ===== */
+.page{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:#fffaf3;
+  border-radius:16px;
+  padding:30px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.3);
+  transform-origin:left;
+  transition:1s;
+  backface-visibility:hidden;
+  overflow:auto;
+  color:#5a0c26;
+  line-height:1.8;
+  font-size:17px;
+  background-image:url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+}
+
+.page.flipped{ transform:rotateY(-180deg); }
+
+.page:nth-child(1){z-index:6;}
+.page:nth-child(2){z-index:5;}
+.page:nth-child(3){z-index:4;}
+.page:nth-child(4){z-index:3;}
+.page:nth-child(5){z-index:2;}
+.page:nth-child(6){z-index:1;}
+
+/* ===== BUTTONS FRONT ===== */
+.controls{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:18px;
+  position:relative;
+  z-index:9999;
+}
+
+button{
+  padding:12px 26px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff4b6e,#ff7a95);
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+}
+
+button:disabled{opacity:0.4}
+
+/* ===== FINAL BUTTON ===== */
+#finalBtn{
+  text-align:center;
+  margin-top:25px;
+  display:none;
+  z-index:9999;
+}
+
+#finalBtn a{
+  padding:14px 34px;
+  background:linear-gradient(45deg,#ff4b6e,#ff7a95);
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+/* ===== FLOATING HEARTS ===== */
+.heart{
+  position:fixed;
+  font-size:18px;
+  animation:floatUp 6s linear forwards;
+}
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:1;}
+  to{transform:translateY(-110vh);opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="candle"></div>
+
+<h1>My Dearest Manoj ❤️</h1>
+
+<div class="book">
+
+<div class="page"><p>Our story didn’t begin like a movie…<br><br>
+It began quietly, during the world’s pause — Corona, 2019.<br>
+When the world slowed down, somehow… my heart started noticing you.<br><br>
+
+We came to grandmother’s home for those long corona holidays —<br>
+You with your 10th boards, me with my 12th.<br>
+Back then, I never imagined you would become my world.<br>
+You were just my cousin… someone around me… nothing more.</p></div>
+<div class="page"><p>But love is strange… it arrives softly, without warning.<br><br>
+
+One simple evening, when we went out for gobi manchuri,<br>
+I told you I liked your hairstyle…<br>
+and maybe you didn’t know —<br>
+that tiny moment was the first time my heart saw you differently.<br><br>
+
+And maybe… something changed in you too.<br>
+You never said it immediately, but later you told me —<br>
+one quiet night, when we were close without words,<br>
+you kissed me softly… and from that moment,<br>
+a strange feeling stayed in your heart.<br>
+It began with guilt… but slowly, quietly,<br>
+that feeling turned into love.</p></div>
+<div class="page"><p>Then came our sihi shavige day ❤️<br>
+I was preparing, you sat next to me casually…<br>
+and asked, “Do you have a boyfriend?”<br>
+I said no.<br><br>
+
+Then you asked me to ask you the same.<br>
+When I asked… you smiled and said —<br>
+“Yes… she is sitting next to me.”<br><br>
+
+That moment… my heart already knew.<br>
+But hearing it from you made everything real.<br><br>
+
+Corona ended… we returned home…<br>
+but our story had already begun.<br><br>
+
+One day, without fear, without waiting,<br>
+you said “I love you.”<br>
+And without thinking twice…<br>
+I said “I love you too.”</p></div>
+<div class="page"><p>No drama. No long wait.<br>
+Just two hearts… choosing each other.<br><br>
+
+Even though distance exists between us…<br>
+it never truly felt like distance.<br>
+Just two hours apart — yet always close in heart.<br><br>
+
+Every time we meet becomes my sweetest memory.<br>
+But one day will always stay special — our very first meet.<br><br>
+
+We met at Majestic… simple, nervous, quiet… yet beautiful.<br>
+From there, we went to the temple — maybe to thank destiny.<br>
+Then we watched Bhajarangi 2 in that small ₹150 theatre…<br>
+It wasn’t about the movie… it was about us.</p></div>
+<div class="page"><p>Our first real moment together — and my heart still remembers every second of that day.<br><br>
+
+And every time we had to say goodbye… those were the hardest moments.<br>
+Smiling while leaving… but crying inside.<br>
+Whenever I returned home after meeting you,<br>
+tears followed — not from sadness, but because leaving you felt heavy.<br><br>
+
+But one memory stays deeper than all…<br><br>
+
+When I was doing my internship near your house,<br>
+those three months felt like a beautiful dream — seeing you often, feeling close, feeling complete.<br>
+And the day I had to leave…<br><br>
+
+You cried.<br>
+I cried.<br><br>
+
+No words. Just two hearts not wanting to separate.<br><br>
+
+That moment made me realize — this is not just love… this is home.</p></div>
+<div class="page"><p><b>Through sweet memories, silly fights, laughter, tears, and a thousand little moments…<br>
+we built our love.<br><br>
+
+You are not just my love, Manoj…<br>
+You are my peace. My comfort. My safe place.<br>
+The person who made ordinary days feel magical.<br><br>
+
+And today, if someone asks me what love means…<br>
+I will simply say — You.<br><br>
+
+No matter where life takes us,<br>
+no matter how many storms come,<br>
+my heart will always choose you.<br><br>
+
+<b>Forever yours ❤️</b></b></p></div>
+
+</div>
+
+<div class="controls">
+<button id="prevBtn" onclick="prevPage()">⬅ Previous</button>
+<button id="nextBtn" onclick="nextPage()">Next ➜</button>
+</div>
+
+<div id="finalBtn">
+<a href="proposal.html">One Last Question 💍</a>
+</div>
+
+<!-- 🎵 BACKGROUND MUSIC (CONTROLLED BY script.js ONLY) -->
+<audio id="music" loop>
+  <source src="videos/music.mp3" type="audio/mp3">
+</audio>
+
+<!-- 📖 PAGE FLIP SOUND -->
+<audio id="flipSound">
+  <source src="videos/flip.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+let currentPage = 0;
+const pages = document.querySelectorAll(".page");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const flipSound = document.getElementById("flipSound");
+
+/* ===== PAGE FLIP SOUND ===== */
+function playFlip(){
+  flipSound.currentTime = 0;
+  flipSound.play().catch(()=>{});
+}
+
+/* ===== PAGE CONTROLS ===== */
+function nextPage(){
+  if(currentPage < pages.length){
+    pages[currentPage].classList.add("flipped");
+    playFlip();
+    currentPage++;
+  }
+  updateButtons();
+}
+
+function prevPage(){
+  if(currentPage > 0){
+    currentPage--;
+    pages[currentPage].classList.remove("flipped");
+    playFlip();
+  }
+  updateButtons();
+}
+
+function updateButtons(){
+  prevBtn.disabled = (currentPage === 0);
+  nextBtn.style.display = (currentPage === pages.length) ? "none" : "inline-block";
+  document.getElementById("finalBtn").style.display =
+    (currentPage === pages.length) ? "block" : "none";
+}
+
+/* ===== FLOATING HEARTS ===== */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+  h.style.left=Math.random()*100+"vw";
+  h.style.bottom="0";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},900);
+
+</script>
+
+<!-- GLOBAL MUSIC CONTROLLER -->
+<script src="script.js"></script>
+
+</body>
+</html>

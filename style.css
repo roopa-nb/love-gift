@@ -1,0 +1,317 @@
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI', cursive;
+}
+
+/* ================= DEFAULT CINEMATIC BODY ================= */
+body{
+  background:radial-gradient(circle at top,#1a0c17,#2a0f1f,#000);
+  color:#ffd6e5;
+  overflow-x:hidden;
+}
+
+/* ================= PAGE FADE ================= */
+body.fade-in{ animation:fadeIn 0.9s ease; }
+body.fade-out{ animation:fadeOut 0.6s ease forwards; }
+
+@keyframes fadeIn{
+  from{opacity:0; transform:scale(1.01);}
+  to{opacity:1;}
+}
+@keyframes fadeOut{
+  to{opacity:0; transform:scale(0.99);}
+}
+
+/* ================= CENTER LAYOUT ================= */
+.center{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+}
+
+/* ================= TITLE ================= */
+h1{
+  font-size:34px;
+  margin-bottom:18px;
+  text-shadow:0 0 12px #ff6a95,0 0 22px #ff2f6e;
+}
+
+/* ================= GLASS CARD ================= */
+.card{
+  width:100%;
+  max-width:760px;
+  padding:26px;
+  border-radius:18px;
+  margin-bottom:26px;
+  background:rgba(255,255,255,0.07);
+  backdrop-filter:blur(14px);
+  box-shadow:0 0 25px rgba(255,0,90,0.25);
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.7s ease;
+}
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card img,
+.card video{
+  width:100%;
+  border-radius:14px;
+  margin-top:12px;
+}
+
+/* ================= LETTER ================= */
+.letter{
+  font-size:18px;
+  line-height:1.9;
+  text-align:left;
+}
+
+/* ================= BUTTON ================= */
+.btn{
+  margin-top:28px;
+  padding:14px 34px;
+  border-radius:40px;
+  font-size:17px;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(45deg,#ff2f6e,#ff6a95);
+  box-shadow:0 0 20px rgba(255,50,110,0.6);
+  transition:0.25s;
+}
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 35px rgba(255,50,110,0.9);
+}
+
+/* ================= FINAL MESSAGE ================= */
+.final-message{
+  margin-top:40px;
+  font-size:32px;
+  color:#fff;
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s ease;
+  text-shadow:0 0 14px #ff6a95,0 0 35px #ff2f6e;
+}
+.final-message.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ================= MOVIE BACKGROUND ================= */
+.movie-bg{
+  background:radial-gradient(circle at center,#1a0010,#000);
+  color:white;
+}
+
+/* ================= FINAL CINEMA SCREEN ================= */
+.final-scene{
+  position:fixed;
+  inset:0;
+  background:black;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:2s ease;
+}
+.final-scene.show{
+  opacity:1;
+}
+
+.final-text{
+  font-size:40px;
+  color:white;
+  text-shadow:0 0 20px #ff6a95,0 0 40px #ff2f6e;
+  margin-bottom:20px;
+}
+
+.sub-text{
+  font-size:20px;
+  opacity:0.85;
+  letter-spacing:2px;
+}
+
+/* ================= FIRE FLY ================= */
+.firefly{
+  position:fixed;
+  width:3px;
+  height:3px;
+  background:#fff;
+  border-radius:50%;
+  box-shadow:0 0 8px white;
+  animation:fireflyMove 6s linear infinite;
+}
+
+@keyframes fireflyMove{
+  from{transform:translateY(0);}
+  to{transform:translateY(-100vh);}
+}
+
+/* ================= TWINKLE ================= */
+@keyframes twinkle{
+  from{opacity:0.3;}
+  to{opacity:1;}
+}
+
+/* =========================================================
+   📖 LOVE SCRAPBOOK (NEW DESIGN)
+========================================================= */
+
+.scrapbook{
+  background:#fdf6e3;
+  color:#444;
+  font-family:cursive;
+  text-align:center;
+  padding:30px;
+}
+
+.title{
+  margin-bottom:25px;
+  font-size:30px;
+  color:#c94b6e;
+}
+
+.book{
+  max-width:700px;
+  margin:auto;
+}
+
+/* Scrapbook Page */
+.page{
+  background:white;
+  padding:20px;
+  margin:25px 0;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  transform:rotate(-1deg);
+  transition:0.3s ease;
+}
+
+.page:nth-child(even){
+  transform:rotate(1deg);
+}
+
+.page:hover{
+  transform:scale(1.02) rotate(0deg);
+}
+
+.page img{
+  width:100%;
+  border-radius:10px;
+}
+
+/* Diary text */
+.page p{
+  margin-top:12px;
+  font-size:18px;
+}
+
+/* Special video page */
+.special{
+  background:#fff5f7;
+}
+
+.special video{
+  width:100%;
+  margin-top:12px;
+  border-radius:10px;
+}
+
+/* Scrapbook Button */
+.next-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 28px;
+  background:#ff4b6e;
+  color:white;
+  text-decoration:none;
+  border-radius:25px;
+  font-size:16px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  h1{ font-size:26px; }
+  .btn{ padding:12px 26px; font-size:15px; }
+  .final-text{ font-size:30px; }
+}
+
+/* ===== NEW GIFT PAGE STYLE ===== */
+
+.glow-title{
+  font-size:38px;
+  text-align:center;
+  color:#ff9ab8;
+  text-shadow:0 0 15px #ff4b6e,0 0 30px #ff2f6e;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  color:#ffd6e5;
+  margin-bottom:30px;
+  font-size:18px;
+}
+
+/* BIG BUTTON */
+.big-btn{
+  padding:16px 40px;
+  border-radius:50px;
+  font-size:18px;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(45deg,#ff4b6e,#ff7a95);
+  box-shadow:0 0 25px rgba(255,70,120,0.7);
+  transition:0.3s;
+}
+
+.big-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 40px rgba(255,70,120,0.9);
+}
+
+/* MEMORY STRIP */
+.memory-strip{
+  margin-top:40px;
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.memory-strip img{
+  width:140px;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  transition:0.3s;
+}
+
+.memory-strip img:hover{
+  transform:scale(1.08);
+}
+
+/* FLOAT HEART */
+.heart{
+  position:fixed;
+  font-size:18px;
+  animation:floatUp 6s linear forwards;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:1;}
+  to{transform:translateY(-110vh);opacity:0;}
+}
